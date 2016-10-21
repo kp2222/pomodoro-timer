@@ -1,0 +1,1 @@
+web: java $JVM_OPTS -cp target/pomodoro-0.1.0-SNAPSHOT-standalone.jar clojure.main -m pomodoro.server
