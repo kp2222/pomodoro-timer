@@ -33,7 +33,7 @@
   [IconMenu {:iconButtonElement (r/as-element [IconButton [NavigationMoreVert]])
              :targetOrigin #js{:horizontal "right", :vertical "top"}
              :anchorOrigin #js{:horizontal "right", :vertical "top"}}
-   [MenuItem {:onTouchTap #(re-frame/dispatch [:set-active-pane :home-panel])} "Home"]
+   [MenuItem {:onTouchTap #(re-frame/dispatch [:set-active-panel :home-panel])} "Home"]
    [MenuItem {:onTouchTap #(re-frame/dispatch [:set-active-panel :settings-panel ])}"Settings"]])
 
 (defn timer-panel []

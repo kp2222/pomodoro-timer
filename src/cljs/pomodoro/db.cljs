@@ -1,6 +1,33 @@
 (ns pomodoro.db
   (:require [re-frame.core :as re-frame]
-            [cognitect.transit :as t]))
+            [cognitect.transit :as t]
+            [cljs.spec :as s]))
+
+;; spec for validating the schema of app-db.
+;;
+;; This would ideally be used from the interceptors
+;; to make sure the integrity of the app-db is maintained by event processing
+
+;; settings spec
+(s/def ::pomodoro-time integer? )
+(s/def ::notifications-enabled #{true false})
+(s/def ::break-time integer?)
+(s/def ::settings (s/keys :req-un [::pomodoro-time ::break-time ::notifications-enabled]))
+
+;; pomodoro history entry
+(s/def ::task-description string?)
+(s/def ::duration integer?)
+(s/def ::time #(instance? goog.date.UtcDateTime %) )
+(s/def ::history-entry (s/keys :req-un [::task-description ::duration ::time]))
+(s/def ::history (s/coll-of ::history-entry))
+
+;; app-db
+(s/def ::app-db (s/keys :req-un [::history ::settings]))
+
+
+
+
+
 
 (def default-db {:history []
                  :settings {:pomodoro-time 30

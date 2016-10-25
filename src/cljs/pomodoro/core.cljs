@@ -28,8 +28,8 @@
 
 (defn ^:export init []
   (dev-setup)
+  (re-frame/dispatch-sync [:initialize-db])
   (routes/app-routes)
-  (re-frame/dispatch [:initialize-db])
   (mount-root)
   (notifications/setup-notifications))
 
