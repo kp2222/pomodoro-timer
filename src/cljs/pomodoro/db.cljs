@@ -1,7 +1,7 @@
 (ns pomodoro.db
   (:require [re-frame.core :as re-frame]
             [cognitect.transit :as t]
-            [cljs.spec :as s]))
+            [cljs.spec.alpha :as s]))
 
 ;; spec for validating the schema of app-db.
 ;;
@@ -17,7 +17,9 @@
 ;; pomodoro history entry
 (s/def ::task-description string?)
 (s/def ::duration integer?)
-(s/def ::time #(instance? goog.date.UtcDateTime %) )
+(s/def ::time #(or
+                (instance? goog.date.UtcDateTime %)
+                (instance? js/Date %)))
 (s/def ::history-entry (s/keys :req-un [::task-description ::duration ::time]))
 (s/def ::history (s/coll-of ::history-entry))
 

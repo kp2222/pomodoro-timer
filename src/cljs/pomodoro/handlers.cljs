@@ -2,7 +2,7 @@
     (:require [re-frame.core :as re-frame]
               [pomodoro.db :as db]
               [taoensso.timbre :as timbre]
-              [cljs.spec :as s]))
+              [cljs.spec.alpha :as s]))
 
 
 

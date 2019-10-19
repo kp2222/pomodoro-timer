@@ -6,6 +6,12 @@
   <version>0.1.0-SNAPSHOT</version>
   <name>pomodoro</name>
   <description/>
+  <scm>
+    <url>https://github.com/kp2222/pomodoro-timer</url>
+    <connection>scm:git:git://github.com/kp2222/pomodoro-timer.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/kp2222/pomodoro-timer.git</developerConnection>
+    <tag>9e9a19b1d6b3461c7d47ad49e5164d4abb3d4663</tag>
+  </scm>
   <build>
     <sourceDirectory>src/clj</sourceDirectory>
     <testSourceDirectory>test</testSourceDirectory>
@@ -36,7 +42,7 @@
     </repository>
     <repository>
       <id>clojars</id>
-      <url>https://clojars.org/repo/</url>
+      <url>https://repo.clojars.org/</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
@@ -45,6 +51,9 @@
       </releases>
     </repository>
   </repositories>
+  <dependencyManagement>
+    <dependencies/>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>
@@ -54,12 +63,48 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojurescript</artifactId>
-      <version>1.9.229</version>
+      <version>1.10.520</version>
     </dependency>
     <dependency>
       <groupId>reagent</groupId>
       <artifactId>reagent</artifactId>
       <version>0.6.0</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>react</artifactId>
+          <groupId>cljsjs</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>ring</groupId>
+      <artifactId>ring</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>ring</groupId>
+      <artifactId>ring-defaults</artifactId>
+      <version>0.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>bk</groupId>
+      <artifactId>ring-gzip</artifactId>
+      <version>0.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>ring.middleware.logger</groupId>
+      <artifactId>ring.middleware.logger</artifactId>
+      <version>0.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>compojure</groupId>
+      <artifactId>compojure</artifactId>
+      <version>1.5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>environ</groupId>
+      <artifactId>environ</artifactId>
+      <version>1.0.3</version>
     </dependency>
     <dependency>
       <groupId>binaryage</groupId>
@@ -70,16 +115,63 @@
       <groupId>re-frame</groupId>
       <artifactId>re-frame</artifactId>
       <version>0.8.0</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>react</artifactId>
+          <groupId>cljsjs</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
-      <groupId>reagent-material-ui</groupId>
-      <artifactId>reagent-material-ui</artifactId>
-      <version>0.2.1</version>
+      <groupId>cljsjs</groupId>
+      <artifactId>material-ui</artifactId>
+      <version>0.15.4-0</version>
     </dependency>
     <dependency>
       <groupId>secretary</groupId>
       <artifactId>secretary</artifactId>
       <version>1.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>clojure-humanize</groupId>
+      <artifactId>clojure-humanize</artifactId>
+      <version>0.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.andrewmcveigh</groupId>
+      <artifactId>cljs-time</artifactId>
+      <version>0.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.taoensso</groupId>
+      <artifactId>timbre</artifactId>
+      <version>4.7.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.cognitect</groupId>
+      <artifactId>transit-cljs</artifactId>
+      <version>0.8.239</version>
+    </dependency>
+    <dependency>
+      <groupId>ring-logger-timbre</groupId>
+      <artifactId>ring-logger-timbre</artifactId>
+      <version>0.7.5</version>
+    </dependency>
+    <dependency>
+      <groupId>devcards</groupId>
+      <artifactId>devcards</artifactId>
+      <version>0.2.2</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>react</artifactId>
+          <groupId>cljsjs</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>reanimated</groupId>
+      <artifactId>reanimated</artifactId>
+      <version>0.5.0</version>
     </dependency>
   </dependencies>
 </project>

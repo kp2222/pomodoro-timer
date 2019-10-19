@@ -1,6 +1,6 @@
 (defproject pomodoro "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.229"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.6.0" :exclusions [cljsjs/react]]
                  [ring "1.4.0"]
                  [ring/ring-defaults "0.2.0"]
@@ -12,11 +12,12 @@
                  [re-frame "0.8.0" :exclusions [cljsjs/react]]
                  [cljsjs/material-ui "0.15.4-0"]
                  [secretary "1.2.3"]
-                 [clojure-humanize "0.2.1-SNAPSHOT"]
-                 [com.andrewmcveigh/cljs-time "0.4.0"]
+                 [clojure-humanize "0.2.2"]
+                 [com.andrewmcveigh/cljs-time "0.5.2"]
                  [com.taoensso/timbre "4.7.4"]
                  [com.cognitect/transit-cljs "0.8.239"]
                  [ring-logger-timbre "0.7.5"]
+                 
                  [devcards "0.2.2" :exclusions [cljsjs/react]]
                  [reanimated "0.5.0"]]
  
@@ -27,6 +28,7 @@
   :git-dependencies [["https://github.com/trhura/clojure-humanize.git"]]
 
   :min-lein-version "2.5.3"
+
 
   :source-paths ["src/clj"]
 
@@ -42,7 +44,7 @@
   {:dev
    {:dependencies []
 
-    :plugins      [[lein-figwheel "0.5.7"]]
+    :plugins      [[lein-figwheel "0.5.19"]]
     }
    :uberjar
    {:source-paths ^:replace ["src/clj" "src/cljc"]
